@@ -1,0 +1,10 @@
+- hosts: localhost
+  tasks:
+        - name: install git
+          yum: name=git state=latest
+          sudo: yes
+        - name: clone myrepo
+          git: repo=https://github.com/aeytan/myrepo.git dest=/home/ec2-user/ansible/myrepo
+        - name: clone petclinic
+          git: repo=https://github.com/aeytan/spring-petclinic.git dest=/home/ec2-user/ansible/petclinic
+
